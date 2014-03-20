@@ -1,0 +1,10 @@
+{
+    "name": "swAngular-ObjectManipulator",
+    "version": "1.0.0",
+    "main": "swAngular-ObjectManipulator.js",
+    "ignore": [ ],
+    "dependencies": {
+        "bootstrap": "~3.0.3"
+    },
+    "devDependencies": { }
+}

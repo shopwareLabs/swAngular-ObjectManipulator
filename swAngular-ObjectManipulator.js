@@ -17,13 +17,13 @@ angular.module('swAngularObjectManipulator', [])
                         itemElement.append('function');
                         break;
                     case 'number':
-                        itemElement.append('<input type="number" ng-model="' + scope + '[\'' + key + '\']" />');
+                        itemElement.append('<input ng-disabled="options.readonly" type="number" ng-model="' + scope + '[\'' + key + '\']" />');
                         break;
                     case 'string':
-                        itemElement.append('<input type="text" ng-model="' + scope + '[\'' + key + '\']" />');
+                        itemElement.append('<input ng-disabled="options.readonly" type="text" ng-model="' + scope + '[\'' + key + '\']" />');
                         break;
                     case 'boolean':
-                        itemElement.append('<input type="checkbox" ng-model="' + scope + '[\'' + key + '\']" />');
+                        itemElement.append('<input ng-disabled="options.readonly" type="checkbox" ng-model="' + scope + '[\'' + key + '\']" />');
                         break;
                     default:
                         itemElement.append('whatever')

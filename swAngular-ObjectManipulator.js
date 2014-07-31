@@ -7,8 +7,8 @@ angular.module('swAngularObjectManipulator', [])
                 switch (typeof object[key]) {
                     case 'object':
                         var showSubElement = 'show_' + scope.replace(/[\ \[\]\'\(\)]/g,'') + key.replace(/[\ \[\]\'\(\)]/g,'') + '_element';
-                        itemElement.prepend('<i class="glyphicon glyphicon-arrow-down wide" ng-show="'+showSubElement+'" ng-click="' + showSubElement + ' = false"></i>');
-                        itemElement.prepend('<i class="glyphicon glyphicon-arrow-right wide" ng-show="!'+showSubElement+'" ng-click="' + showSubElement + ' = true"></i>');
+                        itemElement.prepend('<i class="glyphicon glyphicon-arrow-down wide" data-ng-show="'+showSubElement+'" data-ng-click="' + showSubElement + ' = false"></i>');
+                        itemElement.prepend('<i class="glyphicon glyphicon-arrow-right wide" data-ng-show="!'+showSubElement+'" data-ng-click="' + showSubElement + ' = true"></i>');
                         subElement = getViewElement(scope + '[\'' + key + '\']', object[key]);
                         subElement.attr('ng-show', showSubElement);
                         itemElement.append(subElement);
@@ -17,13 +17,13 @@ angular.module('swAngularObjectManipulator', [])
                         itemElement.append('function');
                         break;
                     case 'number':
-                        itemElement.append('<input ng-disabled="options.readonly" type="number" ng-model="' + scope + '[\'' + key + '\']" />');
+                        itemElement.append('<input data-ng-disabled="options.readonly" type="number" data-ng-model="' + scope + '[\'' + key + '\']" />');
                         break;
                     case 'string':
-                        itemElement.append('<input ng-disabled="options.readonly" type="text" ng-model="' + scope + '[\'' + key + '\']" />');
+                        itemElement.append('<input data-ng-disabled="options.readonly" type="text" data-ng-model="' + scope + '[\'' + key + '\']" />');
                         break;
                     case 'boolean':
-                        itemElement.append('<input ng-disabled="options.readonly" type="checkbox" ng-model="' + scope + '[\'' + key + '\']" />');
+                        itemElement.append('<input data-ng-disabled="options.readonly" type="checkbox" data-ng-model="' + scope + '[\'' + key + '\']" />');
                         break;
                     default:
                         itemElement.append('whatever')
